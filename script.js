@@ -162,26 +162,26 @@
 // Задача №12
 let person1 = {
   name: 'Eugene',
-  age: '16',
+  age: 16,
   location: 'Ukraine',
 }
 
 let person2 = {
-  nama: 'Aleks',
+  name: 'Aleks',
   age: 17,
   location: 'Russia',
 }
 
 let person3 = {
   name: 'Eugene',
-  age: '16',
+  age: 16,
   location: 'Ukraine',
 }
 
 function isEqual(obj1, obj2) {
   for (item1 in obj1) {
     for (item2 in obj2) {
-      return item1 === item2
+      return obj1[item1] === obj2[item2]
     }
   }
 }
