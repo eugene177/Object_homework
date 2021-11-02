@@ -168,6 +168,7 @@ let person1 = {
 
 let person2 = {
   name: 'Aleks',
+  surname: 'dwayne',
   age: 17,
   location: 'Russia',
 }
@@ -179,10 +180,21 @@ let person3 = {
 }
 
 function isEqual(obj1, obj2) {
-  for (item1 in obj1) {
-    for (item2 in obj2) {
-      return obj1[item1] === obj2[item2]
+  let arr1 = Object.values(obj1)
+  let arr2 = Object.values(obj2)
+  for (let i = 0; i < arr1.length; i++) {
+    if (
+      arr2.some(item => {
+        return item === arr1[i]
+      }) &&
+      arr1.length == arr2.length
+    ) {
+      continue
+    } else {
+      return false
     }
   }
+  return true
 }
+
 console.log(isEqual(person1, person3))
